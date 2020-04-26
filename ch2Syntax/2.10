@@ -1,0 +1,25 @@
+Reorder the directives in the previous problem so that no .align directives are necessary to ensure proper alignment. How many bytes of storage were wasted by the original ordering of directives compared to the new one?
+
+Old answer
+
+	.data
+a:	.byte	7
+	.align	2
+b:	.word	32
+c:	.byte	7
+	.align	3
+d:	.quad	0x123456789abcdef
+e:	.byte	7
+	.align 	1
+f:	.hword	0xffff
+
+New answer
+
+	.data
+d:	.quad	0x123456789abcdef
+b:	.word	32
+a:	.byte	7
+c:	.byte	7
+e:	.byte	7
+
+Bytes wasted: 3 + 7 + 1 = 11 bytes wasted
