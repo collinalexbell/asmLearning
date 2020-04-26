@@ -1,0 +1,13 @@
+What is the difference between?
+
+a) .data and .bss
+	.data is used to store data constants in the assembled code itself
+	.bss is only used to allocate space where constants will be stored, but does not initalize them to anything
+	.bss takes up O(1) space in the resulting object file, because memory is not actually initialized
+
+b) .ascii and .asciz
+	.ascii is not null terminated
+	.asciz is null terminated
+
+c) .word and .long
+	On the aarch64 architecture, both allocate/initalize 4 bytes. On other archs, this may not be the case.

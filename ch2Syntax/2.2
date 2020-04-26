@@ -1,0 +1,31 @@
+What is the purpose of .align?
+	.align is a directive that ensures the next block of memory allocated/initialized begins on an apporopriate memory boundary.
+
+What does .align 2 do in GNU AArch64 assembly?
+	This enures that the next block of memory is allocated on a word boundry. That is, the memory will be allocated 0 to 3 bytes away from the previous memory location.
+	The equation that dictates where the memory will be allocated is as follows curMemLoc + (4-curMemLoc%4)%4. 
+
+0 1 2 3 4 5 6 7 8
+	|
+	nextMemLoc
+	|
+	curMemLoc
+
+0 1 2 3 4 5 6 7 8
+      | |
+      | nextMemLoc
+      |
+      curMemLoc
+
+0 1 2 3 4 5 6 7 8
+    |   |
+    |   nextMemLoc
+    |
+    curMemLoc
+
+0 1 2 3 4 5 6 7 8
+  |     |
+  |     nextMemLoc
+  |
+  curMemLoc
+
