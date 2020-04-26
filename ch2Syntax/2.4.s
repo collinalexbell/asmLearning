@@ -19,10 +19,6 @@ _start:
 	mov x8, 64 	
 	svc #0 		
 
-
-
-
-
 	mov x0, 123 	// exit code
 	mov x8, 93 	// sys_exit() is at index 93 in kernel functions table
 	svc #0 		// generate kernel call sys_exit(123);
