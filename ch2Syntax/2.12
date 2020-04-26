@@ -1,0 +1,6 @@
+Why are .ascii and .asciz directives usually followed by an .align directive, but .word directives are not?
+
+The only time a word directive needs to be followed with an align is if a quadword is used after it (or the word itself wasn't aligned). This is because a word is 4 bytes, so 1, 2, and 4 byte allocations will be aligned when following a word or multiple words.
+
+.ascii and asciz on the other hand can be a variable length of bytes. Each ascii char is only 1 byte long, so a variable number of single bytes means that any allocation following .ascii or .asciz that is greater than 1 byte may not fall on the appropriate boundary. 
+
