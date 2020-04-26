@@ -1,0 +1,3 @@
+Listing 2.3 shows that the assembler will assign the location 00000000(16) to the main symbol and also the mesg symbol. Why does this not cause problems?
+
+The location number is not an absolute number, but rather a number that is relative to the section. Since mesg and main are in 2 seperate sections (.data and .text), the 2 variables will have different absolute locations despite having the same location relative to their section.
