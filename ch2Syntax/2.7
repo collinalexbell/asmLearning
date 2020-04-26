@@ -1,0 +1,23 @@
+Write assembly code to declare variables equivalent to the following C code
+
+static int foo[3];
+static char bar[4];
+char barfoo;
+int foobar;
+
+Answer
+
+.bss
+foo:
+	.word	0,0,0
+bar:
+	.byte	0,0,0,0
+
+.global barfoo
+.global foobar
+
+barfoo:
+	.byte 0
+foobar:
+	.word 0
+	
