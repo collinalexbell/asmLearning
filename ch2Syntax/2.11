@@ -1,0 +1,6 @@
+What are the most important directives for selecting a section?
+
+.data
+.text
+.bss
+.section
