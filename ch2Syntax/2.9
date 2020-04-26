@@ -1,0 +1,22 @@
+Insert the minimum number of .align directives necessary in the following code so that all double-word variables are aligned on double -word boundaries, all word variables are aligned on word boundaries, and all halfword variables are aligned on halfword boundaries, while minimizing the amount of wasted space
+
+	.data
+a:	.byte	7
+b:	.word	32
+c:	.byte	7
+d:	quad	0x123456789abcdef
+e:	byte	7
+f:	.hword	0xffff
+
+Answer
+
+	.data
+a:	.byte	7
+	.align	2
+b:	.word	32
+c:	.byte	7
+	.align	3
+d:	.quad	0x123456789abcdef
+e:	.byte	7
+	.align 	1
+f:	.hword	0xffff
